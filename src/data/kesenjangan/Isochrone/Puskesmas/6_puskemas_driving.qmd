@@ -1,0 +1,50 @@
+<!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
+<qgis version="3.44.7-Solothurn">
+  <identifier></identifier>
+  <parentidentifier></parentidentifier>
+  <language></language>
+  <type></type>
+  <title></title>
+  <abstract>This layer was generated using the 'Time Map - Simple' algorithm from the TravelTime plugin version 1.9.0. The following parameters were used : 
+INPUT_EXISTING_FIELDS_TO_KEEP: []
+INPUT_ID: 'searches_' || $id
+INPUT_LEVEL_OF_DETAIL: 0
+INPUT_NO_HOLES: False
+INPUT_SEARCHES: Puskesmas_KTMuting_889b5163_78a0_4841_9ec3_4eab85a87e53
+INPUT_SEARCH_TYPE: 1
+INPUT_SINGLE_SHAPE: False
+INPUT_TIME: 2025-11-04T08:00:00
+INPUT_TRAVEL_TIME: 6
+INPUT_TRNSPT_TYPE: 1
+OUTPUT: TEMPORARY_OUTPUT
+OUTPUT_RESULT_TYPE: 0
+SETTINGS_ROBUST_MODE: False
+SETTINGS_TIMEZONE: 277</abstract>
+  <keywords vocabulary="TTP_ALGORITHM">
+    <keyword>ttp_v4:time_map_simple</keyword>
+  </keywords>
+  <keywords vocabulary="TTP_PARAMS">
+    <keyword>{"INPUT_EXISTING_FIELDS_TO_KEEP": [], "INPUT_ID": "'searches_' || $id", "INPUT_LEVEL_OF_DETAIL": 0, "INPUT_NO_HOLES": false, "INPUT_SEARCHES": "Puskesmas_KTMuting_889b5163_78a0_4841_9ec3_4eab85a87e53", "INPUT_SEARCH_TYPE": 1, "INPUT_SINGLE_SHAPE": false, "INPUT_TIME": "2025-11-04T08:00:00", "INPUT_TRAVEL_TIME": 6, "INPUT_TRNSPT_TYPE": 1, "OUTPUT": "TEMPORARY_OUTPUT", "OUTPUT_RESULT_TYPE": 0, "SETTINGS_ROBUST_MODE": false, "SETTINGS_TIMEZONE": 277}</keyword>
+  </keywords>
+  <keywords vocabulary="TTP_VERSION">
+    <keyword>1.9.0</keyword>
+  </keywords>
+  <links/>
+  <dates/>
+  <fees></fees>
+  <encoding></encoding>
+  <crs>
+    <spatialrefsys nativeFormat="Wkt">
+      <wkt></wkt>
+      <proj4></proj4>
+      <srsid>0</srsid>
+      <srid>0</srid>
+      <authid></authid>
+      <description></description>
+      <projectionacronym></projectionacronym>
+      <ellipsoidacronym></ellipsoidacronym>
+      <geographicflag>false</geographicflag>
+    </spatialrefsys>
+  </crs>
+  <extent/>
+</qgis>

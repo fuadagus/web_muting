@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "pasar",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32754" } },
+"features": [
+{ "type": "Feature", "properties": { "Id": 0, "ket": "Pasar Muting 4" }, "geometry": { "type": "Point", "coordinates": [ 472150.233384510327596, 9197232.123964354395866 ] } }
+]
+}

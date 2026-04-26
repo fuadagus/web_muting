@@ -1,0 +1,23 @@
+{
+"type": "FeatureCollection",
+"name": "posyandu",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "POSYANDU", "Kampung": "Kafyamke" }, "geometry": { "type": "Point", "coordinates": [ 140.694875675000048, -7.290407242999947, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "POSYANDU", "Kampung": "Mandekman" }, "geometry": { "type": "Point", "coordinates": [ 140.748745457000041, -7.264834156999939, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "POSYANDU", "Kampung": "Rawahayu" }, "geometry": { "type": "Point", "coordinates": [ 140.734571821000031, -7.245330749999937, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "POSYANDU", "Kampung": "Belbeland" }, "geometry": { "type": "Point", "coordinates": [ 140.786442566000119, -7.32151461199993, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "POSYANDU", "Kampung": "Kandrakai" }, "geometry": { "type": "Point", "coordinates": [ 140.667688702000078, -7.375690831999975, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "POSYANDU", "Kampung": "Baidub" }, "geometry": { "type": "Point", "coordinates": [ 140.85199771900011, -7.299069515999975, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "POSYANDU", "Kampung": "Kir Ely" }, "geometry": { "type": "Point", "coordinates": [ 140.830184982000105, -7.334186728999953, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "POSYANDU", "Kampung": "Manway Bob" }, "geometry": { "type": "Point", "coordinates": [ 140.477722, -7.468847, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "POSYANDU", "Kampung": "Afkab Makmur" }, "geometry": { "type": "Point", "coordinates": [ 140.491936336000094, -7.479184438999937, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "POSYANDU", "Kampung": "Elnggol Jaya" }, "geometry": { "type": "Point", "coordinates": [ 140.550545266000086, -7.410801169999957, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "POSYANDU", "Kampung": "Sigabel Jaya" }, "geometry": { "type": "Point", "coordinates": [ 140.582221313000105, -7.381652557999928, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "POSYANDU", "Kampung": "Bunggay" }, "geometry": { "type": "Point", "coordinates": [ 140.720076434000021, -7.361285449999968, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "POSYANDU", "Kampung": "Tof Tof" }, "geometry": { "type": "Point", "coordinates": [ 140.745857710000109, -7.341033420999963, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "POSYANDU", "Kampung": "Gerisar" }, "geometry": { "type": "Point", "coordinates": [ 140.737465238000027, -7.443879247999973, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "Posyandu", "Kampung": "Enggal Jaya" }, "geometry": { "type": "Point", "coordinates": [ 140.741861239000059, -7.468818792999969, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "POSYANDU", "Kampung": "Sipias" }, "geometry": { "type": "Point", "coordinates": [ 140.786684277000063, -7.485446191999927, 0.0 ] } }
+]
+}

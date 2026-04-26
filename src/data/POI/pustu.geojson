@@ -1,0 +1,28 @@
+{
+"type": "FeatureCollection",
+"name": "pustu",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "PUSTU", "Kampung": "Nggayu" }, "geometry": { "type": "Point", "coordinates": [ 140.653748068000027, -7.296654755999953, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "PUSTU", "Kampung": "Kafyamke" }, "geometry": { "type": "Point", "coordinates": [ 140.694963858000051, -7.290589018999981, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "PUSTU", "Kampung": "Mandekman" }, "geometry": { "type": "Point", "coordinates": [ 140.748193964000052, -7.264147457999968, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "PUSTU", "Kampung": "Rawahayu" }, "geometry": { "type": "Point", "coordinates": [ 140.73440370600008, -7.24494066099993, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "PUSTU", "Kampung": "Belbeland" }, "geometry": { "type": "Point", "coordinates": [ 140.786415726000087, -7.321392480999975, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "PUSTU", "Kampung": "Kandrakai" }, "geometry": { "type": "Point", "coordinates": [ 140.667898951000097, -7.376047483999969, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "PUSTU", "Kampung": "Baidub" }, "geometry": { "type": "Point", "coordinates": [ 140.852232312000069, -7.299122573999966, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "PUSTU", "Kampung": "Kir Ely" }, "geometry": { "type": "Point", "coordinates": [ 140.830824294000081, -7.334348847999934, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "PUSKESMAS PEMBANTU", "Kampung": "Manway Bob" }, "geometry": { "type": "Point", "coordinates": [ 140.478038726000023, -7.468845201999954, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "PUSKESMAS PEMBANTU", "Kampung": "Afkab Makmur" }, "geometry": { "type": "Point", "coordinates": [ 140.491688, -7.478977, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "PUSKESMAS PEMBANTU", "Kampung": "Andaito" }, "geometry": { "type": "Point", "coordinates": [ 140.512703000000101, -7.430921, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "PUSKESMAS PEMBANTU", "Kampung": "Elnggol Jaya" }, "geometry": { "type": "Point", "coordinates": [ 140.548334782000097, -7.411964637999972, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "PUSKESMAS PEMBANTU", "Kampung": "Seed Agung" }, "geometry": { "type": "Point", "coordinates": [ 140.591360554000062, -7.400184908999961, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "PUSKESMAS PEMBANTU", "Kampung": "Sigabel Jaya" }, "geometry": { "type": "Point", "coordinates": [ 140.582287972000017, -7.381830214999979, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "PUSTU", "Kampung": "Bouwer" }, "geometry": { "type": "Point", "coordinates": [ 140.738171376000082, -7.38702066999997, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "PUSTU", "Kampung": "Bunggay" }, "geometry": { "type": "Point", "coordinates": [ 140.719990927000026, -7.360978771999953, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "PUSTU", "Kampung": "Tof Tof" }, "geometry": { "type": "Point", "coordinates": [ 140.745741706000103, -7.340960016999929, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "PUSTU", "Kampung": "Bupul Indah" }, "geometry": { "type": "Point", "coordinates": [ 140.762828528000114, -7.39421396399996, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "PUSTU", "Kampung": "Gerisar" }, "geometry": { "type": "Point", "coordinates": [ 140.737532586000043, -7.443956294999964, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "PUSTU", "Kampung": "Enggal Jaya" }, "geometry": { "type": "Point", "coordinates": [ 140.741087496000091, -7.470090273999972, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "PUSTU", "Kampung": "Sipias" }, "geometry": { "type": "Point", "coordinates": [ 140.786079379000057, -7.485784347999981, 0.0 ] } }
+]
+}

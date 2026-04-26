@@ -1,0 +1,31 @@
+{
+"type": "FeatureCollection",
+"name": "kantor_kampung",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "KANTOR KAMPUNG" }, "geometry": { "type": "Point", "coordinates": [ 140.666273415000092, -7.322895410999934, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "KANTOR KAMPUNG" }, "geometry": { "type": "Point", "coordinates": [ 140.695078287000115, -7.290213777999952, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "KANTOR KAMPUNG" }, "geometry": { "type": "Point", "coordinates": [ 140.748591917000113, -7.264577667999959, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "KANTOR KAMPUNG" }, "geometry": { "type": "Point", "coordinates": [ 140.734093116000054, -7.24452542299997, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "KANTOR KAMPUNG" }, "geometry": { "type": "Point", "coordinates": [ 140.786520963000044, -7.322492797999928, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "KANTOR KAMPUNG" }, "geometry": { "type": "Point", "coordinates": [ 140.667862562000096, -7.375372767999977, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "KANTOR KAMPUNG" }, "geometry": { "type": "Point", "coordinates": [ 140.852280964000101, -7.299720585999978, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "KANTOR KAMPUNG" }, "geometry": { "type": "Point", "coordinates": [ 140.830823316000078, -7.334775580999974, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "KANTOR KAMPUNG" }, "geometry": { "type": "Point", "coordinates": [ 140.654108336000036, -7.296504411999933, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "KANTOR KAMPUNG" }, "geometry": { "type": "Point", "coordinates": [ 140.477500149000093, -7.468804575999968, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "KANTOR KAMPUNG" }, "geometry": { "type": "Point", "coordinates": [ 140.490235283000061, -7.478130207999925, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "KANTOR KAMPUNG" }, "geometry": { "type": "Point", "coordinates": [ 140.513033949000032, -7.43033179899993, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "KANTOR KAMPUNG" }, "geometry": { "type": "Point", "coordinates": [ 140.550534208000045, -7.410677945999964, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "KANTOR KAMPUNG" }, "geometry": { "type": "Point", "coordinates": [ 140.592001480000022, -7.401282069999979, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "KANTOR DESA SIGABEL JAYA" }, "geometry": { "type": "Point", "coordinates": [ 140.581896388000018, -7.381440023999971, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "KANTOR KAMPUNG" }, "geometry": { "type": "Point", "coordinates": [ 140.763060303000088, -7.368811519999952, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "KANTOR KAMPUNG" }, "geometry": { "type": "Point", "coordinates": [ 140.738630717000092, -7.38688575499998, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "KANTOR KAMPUNG" }, "geometry": { "type": "Point", "coordinates": [ 140.720929667000064, -7.363743161999935, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "KANTOR KAMPUNG" }, "geometry": { "type": "Point", "coordinates": [ 140.745984583000109, -7.340959064999936, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "KANTOR KAMPUNG" }, "geometry": { "type": "Point", "coordinates": [ 140.763511771000026, -7.395312073999946, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "KANTOR KAMPUNG" }, "geometry": { "type": "Point", "coordinates": [ 140.737719689000073, -7.44434731299998, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "Kantor Kampung" }, "geometry": { "type": "Point", "coordinates": [ 140.74173235000012, -7.468792722999979, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "KANTOR KAMPUNG" }, "geometry": { "type": "Point", "coordinates": [ 140.777793796000083, -7.446938262999936, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "KANTOR KAMPUNG" }, "geometry": { "type": "Point", "coordinates": [ 140.786967903000118, -7.485125009999933, 0.0 ] } }
+]
+}

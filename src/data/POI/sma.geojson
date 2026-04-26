@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"name": "sma",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32754" } },
+"features": [
+{ "type": "Feature", "properties": { "Id": 0, "deskripsi": "SMA Negeri 1 Muting" }, "geometry": { "type": "Point", "coordinates": [ 451878.241641819418874, 9188766.258508149534464 ] } },
+{ "type": "Feature", "properties": { "Id": 0, "deskripsi": "Ponpes Al-Munawwaroh" }, "geometry": { "type": "Point", "coordinates": [ 472225.694907355762552, 9196942.228685274720192 ] } },
+{ "type": "Feature", "properties": { "Id": 0, "deskripsi": "SMA Negeri 1 Ulilin" }, "geometry": { "type": "Point", "coordinates": [ 462916.500388293177821, 9194956.3017672970891 ] } },
+{ "type": "Feature", "properties": { "Id": 0, "deskripsi": "SMKN 1 Elikobel" }, "geometry": { "type": "Point", "coordinates": [ 476531.068281339481473, 9169867.581507312133908 ] } }
+]
+}

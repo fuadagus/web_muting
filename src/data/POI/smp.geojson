@@ -1,0 +1,13 @@
+{
+"type": "FeatureCollection",
+"name": "smp",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32754" } },
+"features": [
+{ "type": "Feature", "properties": { "Id": 0, "nama": "SMP Negeri 1 Muting" }, "geometry": { "type": "Point", "coordinates": [ 451138.050405141315423, 9190140.193349381908774 ] } },
+{ "type": "Feature", "properties": { "Id": 0, "nama": "SMP Negeri 2 Muting" }, "geometry": { "type": "Point", "coordinates": [ 462491.407886162225623, 9192374.802506105974317 ] } },
+{ "type": "Feature", "properties": { "Id": 0, "nama": "SMP Negeri 5 Muting" }, "geometry": { "type": "Point", "coordinates": [ 471580.701913077849895, 9184881.784012328833342 ] } },
+{ "type": "Feature", "properties": { "Id": 0, "nama": "SMP Negeri 3 Muting" }, "geometry": { "type": "Point", "coordinates": [ 476699.79825335519854, 9172712.285769172012806 ] } },
+{ "type": "Feature", "properties": { "Id": 0, "nama": "SMP Negeri 4 Muting" }, "geometry": { "type": "Point", "coordinates": [ 449617.378512998460792, 9180809.2898293659091 ] } },
+{ "type": "Feature", "properties": { "Id": 0, "nama": "MTS DDI" }, "geometry": { "type": "Point", "coordinates": [ 472179.597004626586568, 9196886.004720253869891 ] } }
+]
+}

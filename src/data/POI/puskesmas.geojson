@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "puskesmas",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "PUSKESMAS ULILIN", "Kampung": "Kumaaf" }, "geometry": { "type": "Point", "coordinates": [ 140.666950968000037, -7.322801554999955, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "PUSKESMAS BUPUL", "Kampung": "Metaat Makmur" }, "geometry": { "type": "Point", "coordinates": [ 140.777375527000117, -7.450070034999953, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "PUSKESMAS MUTING", "Kampung": "Muting" }, "geometry": { "type": "Point", "coordinates": [ 140.593873252929569, -7.365609413391645, 0.0 ] } }
+]
+}

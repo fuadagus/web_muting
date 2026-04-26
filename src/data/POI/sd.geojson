@@ -1,0 +1,13 @@
+{
+"type": "FeatureCollection",
+"name": "sd",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "SD INPRES MUTING XI", "FolderPath": "Document/Layer 6", "Base": 0.0, "TimeStamp": -1, "Kampung": "Manway Bob" }, "geometry": { "type": "Point", "coordinates": [ 140.478089710000063, -7.466967934999957, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "SD INPRES MUTING X", "FolderPath": "Document/Layer 5", "Base": 0.0, "TimeStamp": -1, "Kampung": "Afkab Makmur" }, "geometry": { "type": "Point", "coordinates": [ 140.4917162590001, -7.476947399999972, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "SD INPRES MUTING IX", "FolderPath": "Document/Layer 4", "Base": 0.0, "TimeStamp": -1, "Kampung": "Andaito" }, "geometry": { "type": "Point", "coordinates": [ 140.511873777000119, -7.433005234999939, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "SD INPRES MUTING VIII", "FolderPath": "Document/Layer 3", "Base": 0.0, "TimeStamp": -1, "Kampung": "Elnggol Jaya" }, "geometry": { "type": "Point", "coordinates": [ 140.546477579000111, -7.410320226999943, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "SD NEGERI MUTING VII", "FolderPath": "Document/Layer 2", "Base": 0.0, "TimeStamp": -1, "Kampung": "Seed Agung" }, "geometry": { "type": "Point", "coordinates": [ 140.592421885000022, -7.403287102999968, 0.0 ] } },
+{ "type": "Feature", "properties": { "OID_": 0, "Name": "SD INPRES MUTING VI", "FolderPath": "Document/Layer 1", "Base": 0.0, "TimeStamp": -1, "Kampung": "Sigabel Jaya" }, "geometry": { "type": "Point", "coordinates": [ 140.579004987000076, -7.382169104999946, 0.0 ] } }
+]
+}
