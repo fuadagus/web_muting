@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { MapContainer, TileLayer, Circle, Marker, Popup, GeoJSON } from "react-leaflet";
+import { MapContainer, TileLayer, Circle, Marker, Popup, GeoJSON, useMap } from "react-leaflet";
 import L from "leaflet";
 import proj4 from "proj4";
 import "leaflet/dist/leaflet.css";
@@ -35,6 +35,11 @@ type PoiFeatureItem = {
   properties: Record<string, any>;
 };
 
+type PoiSymbolStyle = {
+  color: string;
+  pictogram: string;
+};
+
 const RAW_ISOCHRONE_FILES = import.meta.glob(
   "../data/kesenjangan/Isochrone/**/*.geojson",
   { query: "?url", import: "default", eager: true },
@@ -65,6 +70,23 @@ const MODE_LABEL_MAP: Record<string, string> = {
   cycling: "bersepeda",
   driving: "berkendara",
   walking: "berjalan kaki",
+};
+
+const POI_SYMBOL_STYLE_MAP: Record<string, PoiSymbolStyle> = {
+  kantor_kampung: { color: "hsl(216, 70%, 45%)", pictogram: "🏢" },
+  kesehatan: { color: "hsl(8, 74%, 52%)", pictogram: "🩺" },
+  pasar: { color: "hsl(27, 92%, 52%)", pictogram: "🛒" },
+  posyandu: { color: "hsl(342, 82%, 52%)", pictogram: "👶" },
+  puskesmas: { color: "hsl(168, 72%, 34%)", pictogram: "🏥" },
+  pustu: { color: "hsl(176, 66%, 41%)", pictogram: "🚑" },
+  sd: { color: "hsl(44, 92%, 48%)", pictogram: "📘" },
+  smp: { color: "hsl(251, 66%, 54%)", pictogram: "📗" },
+  sma: { color: "hsl(272, 58%, 52%)", pictogram: "🎓" },
+};
+
+const DEFAULT_POI_SYMBOL_STYLE: PoiSymbolStyle = {
+  color: "hsl(215, 16%, 47%)",
+  pictogram: "📍",
 };
 
 function toTitleCase(value: string) {
@@ -150,7 +172,7 @@ const ISOCHRONE_COMBINATIONS = Array.from(
           key,
           facility: dataset.facility,
           mode: dataset.mode,
-          label: `${getFacilityLabel(dataset.facility)} ${getModeLabel(dataset.mode)}`,
+          label: `${getModeLabel(dataset.mode)} - ${getFacilityLabel(dataset.facility)}`,
         },
       ];
     }),
@@ -224,11 +246,105 @@ function transformGeojsonToWGS84(raw: any, sourceCrs: "EPSG:32754" | "EPSG:4326"
   };
 }
 
+function getPoiSymbolStyle(category: string): PoiSymbolStyle {
+  return POI_SYMBOL_STYLE_MAP[category] ?? DEFAULT_POI_SYMBOL_STYLE;
+}
+
+function createPoiIcon(style: PoiSymbolStyle) {
+  return L.divIcon({
+    className: "",
+    html: `
+      <div style="
+        width: 24px;
+        height: 24px;
+        border-radius: 9999px;
+        border: 2px solid #ffffff;
+        background: ${style.color};
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+      ">${style.pictogram}</div>
+    `,
+    iconSize: [24, 24],
+    iconAnchor: [12, 12],
+    popupAnchor: [0, -12],
+  });
+}
+
+function MapAutoFitExtent({
+  analysisType,
+  poiFeatures,
+  isochroneGeojson,
+  bufferRadius,
+}: {
+  analysisType: string;
+  poiFeatures: PoiFeatureItem[];
+  isochroneGeojson: any | null;
+  bufferRadius: number;
+}) {
+  const map = useMap();
+
+  useEffect(() => {
+    let bounds: L.LatLngBounds | null = null;
+
+    const poiLatLngs = poiFeatures.map((poi) => L.latLng(poi.coordinates[1], poi.coordinates[0]));
+
+    if (analysisType === "buffer") {
+      if (poiLatLngs.length === 0) {
+        return;
+      }
+
+      bounds = L.latLngBounds(poiLatLngs);
+
+      // Expand bounds to include full buffer area around each POI.
+      poiLatLngs.forEach((latLng) => {
+        const pointBufferBounds = latLng.toBounds(bufferRadius * 2);
+        bounds?.extend(pointBufferBounds.getSouthWest());
+        bounds?.extend(pointBufferBounds.getNorthEast());
+      });
+    }
+
+    if (analysisType === "isochrone") {
+      if (isochroneGeojson) {
+        const isochroneBounds = L.geoJSON(isochroneGeojson).getBounds();
+        if (isochroneBounds.isValid()) {
+          bounds = isochroneBounds;
+        }
+      }
+
+      if (poiLatLngs.length > 0) {
+        const poiBounds = L.latLngBounds(poiLatLngs);
+        bounds = bounds ? bounds.extend(poiBounds) : poiBounds;
+      }
+    }
+
+    if (!bounds || !bounds.isValid()) {
+      return;
+    }
+
+    map.fitBounds(bounds, {
+      padding: [40, 40],
+      maxZoom: 16,
+      animate: true,
+    });
+  }, [analysisType, bufferRadius, isochroneGeojson, map, poiFeatures]);
+
+  return null;
+}
+
 const BUFFER_LEGEND_RANGES = [
   { min: 0, max: 3000, label: "0–3 km", color: "hsl(122,25%,68%)" },
   { min: 3000, max: 6000, label: ">3–6 km", color: "hsl(56,70%,72%)" },
   { min: 6000, max: 9000, label: ">6–9 km", color: "hsl(8,70%,74%)" },
   { min: 9000, max: 20000, label: ">9–20 km", color: "hsl(348,60%,70%)" },
+];
+
+const ISOCHRONE_TIME_CLASSES = [
+  { minute: 3, label: "3 Menit", color: "hsl(122,25%,68%)" },
+  { minute: 9, label: "9 Menit", color: "hsl(60,68%,74%)" },
+  { minute: 12, label: "12 Menit", color: "hsl(8,70%,74%)" },
 ];
 
 export default function AnalysisMapPage() {
@@ -247,6 +363,15 @@ export default function AnalysisMapPage() {
   const [poiError, setPoiError] = useState<string | null>(null);
   const latestIsochroneRequestRef = useRef(0);
   const latestPoiRequestRef = useRef(0);
+  const poiIconsByCategory = useMemo(() => {
+    const icons = new Map<string, L.DivIcon>();
+
+    POI_CATEGORIES.forEach((item) => {
+      icons.set(item.key, createPoiIcon(getPoiSymbolStyle(item.key)));
+    });
+
+    return icons;
+  }, []);
 
   const selectedIsochroneCombination = useMemo(
     () => ISOCHRONE_COMBINATIONS.find((combination) => combination.key === selectedIsochroneCombo),
@@ -305,6 +430,19 @@ export default function AnalysisMapPage() {
       ),
     [availableIsochroneOptions, selectedIsochroneMinutes],
   );
+  const activeIsochroneTimeClass = useMemo(() => {
+    const minutes = activeIsochroneDataset?.minutes;
+
+    if (typeof minutes !== "number") {
+      return ISOCHRONE_TIME_CLASSES[0];
+    }
+
+    return ISOCHRONE_TIME_CLASSES.reduce((closest, current) => {
+      const currentDiff = Math.abs(minutes - current.minute);
+      const closestDiff = Math.abs(minutes - closest.minute);
+      return currentDiff < closestDiff ? current : closest;
+    });
+  }, [activeIsochroneDataset?.minutes]);
   const activeBufferLegend = useMemo(
     () =>
       BUFFER_LEGEND_RANGES.find(
@@ -644,12 +782,56 @@ export default function AnalysisMapPage() {
             )}
             <p className="text-muted-foreground">Kampung tercakup: 3 dari 4</p>
           </div>
+
+          {analysisType === "isochrone" && (
+            <div className="space-y-2">
+              <Label>Waktu Tempuh</Label>
+              <div className="space-y-2">
+                {ISOCHRONE_TIME_CLASSES.map((item) => (
+                  <div key={`iso-legend-${item.minute}`} className="flex items-center gap-3 text-sm">
+                    <span
+                      className="inline-block h-6 w-12 rounded-sm border"
+                      style={{ backgroundColor: item.color }}
+                    />
+                    <span>{item.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <div className="space-y-2">
+            <Label>Legenda Simbol POI</Label>
+            <div className="space-y-2">
+              {POI_CATEGORIES.map((item) => {
+                const style = getPoiSymbolStyle(item.key);
+
+                return (
+                  <div key={`poi-legend-${item.key}`} className="flex items-center gap-2 text-sm">
+                    <span
+                      className="inline-flex h-6 w-6 items-center justify-center rounded-full border-2 border-white text-sm leading-none shadow"
+                      style={{ backgroundColor: style.color }}
+                    >
+                      {style.pictogram}
+                    </span>
+                    <span>{item.label}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Map */}
       <div className="flex-1">
         <MapContainer center={MUTING_CENTER} zoom={10} className="h-full w-full">
+          <MapAutoFitExtent
+            analysisType={analysisType}
+            poiFeatures={poiFeatures}
+            isochroneGeojson={isochroneGeojson}
+            bufferRadius={bufferRadius[0]}
+          />
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; OpenStreetMap'
@@ -670,7 +852,11 @@ export default function AnalysisMapPage() {
                 />
               ))}
               {poiFeatures.map((poi) => (
-                <Marker key={`marker-${poi.id}`} position={[poi.coordinates[1], poi.coordinates[0]]}>
+                <Marker
+                  key={`marker-${poi.id}`}
+                  position={[poi.coordinates[1], poi.coordinates[0]]}
+                  icon={poiIconsByCategory.get(poi.category) ?? createPoiIcon(DEFAULT_POI_SYMBOL_STYLE)}
+                >
                   <Popup>
                     <div className="space-y-1">
                       <p className="font-semibold">{poi.categoryLabel}</p>
@@ -690,15 +876,19 @@ export default function AnalysisMapPage() {
               key={activeIsochroneDataset?.key ?? "isochrone-empty"}
               data={isochroneGeojson}
               style={{
-                color: "hsl(199,89%,40%)",
-                fillColor: "hsl(199,89%,40%)",
-                fillOpacity: 0.15,
+                color: activeIsochroneTimeClass.color,
+                fillColor: activeIsochroneTimeClass.color,
+                fillOpacity: 0.3,
                 weight: 2,
               }}
             />
           )}
           {analysisType === "isochrone" && poiFeatures.map((poi) => (
-            <Marker key={`iso-poi-${poi.id}`} position={[poi.coordinates[1], poi.coordinates[0]]}>
+            <Marker
+              key={`iso-poi-${poi.id}`}
+              position={[poi.coordinates[1], poi.coordinates[0]]}
+              icon={poiIconsByCategory.get(poi.category) ?? createPoiIcon(DEFAULT_POI_SYMBOL_STYLE)}
+            >
               <Popup>
                 <div className="space-y-1">
                   <p className="font-semibold">{poi.categoryLabel}</p>
